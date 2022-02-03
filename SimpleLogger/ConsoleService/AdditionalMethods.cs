@@ -6,7 +6,7 @@ namespace SimpleLogger.ConsoleService
     {
         #region private fields
 
-        private ConsoleColor _DefaultColor;
+        private readonly ConsoleColor _DefaultColor;
         private ConsoleColor _InfoColor;
         private ConsoleColor _WarningColor;
         private ConsoleColor _ErrorColor;
