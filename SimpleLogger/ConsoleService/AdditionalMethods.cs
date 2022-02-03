@@ -6,7 +6,7 @@ namespace SimpleLogger.ConsoleService
     {
         #region private fields
 
-        private readonly ConsoleColor _DefaultColor;
+        private ConsoleColor _DefaultColor;
         private ConsoleColor _InfoColor;
         private ConsoleColor _WarningColor;
         private ConsoleColor _ErrorColor;
@@ -35,7 +35,7 @@ namespace SimpleLogger.ConsoleService
         /// </summary>
         public void DisablePrintDate() => _PrintDate = false;
 
-        public enum ColorCode { Default, Info, Warning, Error, Fatal }
+        public enum ColorCode { Info, Warning, Error, Fatal }
 
         /// <summary>
         /// Set console colors
@@ -89,9 +89,9 @@ namespace SimpleLogger.ConsoleService
 
         internal bool IsColoredPrint => _ColoredPrint;
         internal bool IsPrintDate() => _PrintDate;
+        internal ConsoleColor GetDefaultConsoleColor() => ConsoleColor.Gray;
         internal ConsoleColor GetColor(ColorCode color) => color switch
         {
-            ColorCode.Default => _DefaultColor,
             ColorCode.Info => _InfoColor,
             ColorCode.Warning => _WarningColor,
             ColorCode.Error => _ErrorColor,

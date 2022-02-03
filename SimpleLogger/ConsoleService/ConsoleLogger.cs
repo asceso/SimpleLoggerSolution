@@ -28,13 +28,13 @@ namespace SimpleLogger.ConsoleService
             {
                 Console.ForegroundColor = color;
                 WriteMessageWithLogLevel(message, level);
-                Console.ForegroundColor = Additional.GetColor(AdditionalMethods.ColorCode.Default);
+                Console.ForegroundColor = Additional.GetDefaultConsoleColor();
             }
             else
             {
-                if (Console.ForegroundColor != Additional.GetColor(AdditionalMethods.ColorCode.Default))
+                if (Console.ForegroundColor != Additional.GetDefaultConsoleColor())
                 {
-                    Console.ForegroundColor = Additional.GetColor(AdditionalMethods.ColorCode.Default);
+                    Console.ForegroundColor = Additional.GetDefaultConsoleColor();
                 }
                 WriteMessageWithLogLevel(message, level);
             }
