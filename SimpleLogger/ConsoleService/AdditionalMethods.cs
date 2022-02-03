@@ -12,11 +12,20 @@ namespace SimpleLogger.ConsoleService
         private ConsoleColor _ErrorColor;
         private ConsoleColor _FatalColor;
         private bool _PrintDate = false;
+        private bool _ColoredPrint = false;
 
         #endregion
         #region public methods
 
-        public enum ColorCode { Default, Info, Warning, Error, Fatal }
+        /// <summary>
+        /// Enable colored print in logger
+        /// </summary>
+        public void EnableColoredPrint() => _ColoredPrint = true;
+        /// <summary>
+        /// Disable colored print in logger
+        /// </summary>
+        public void DisableColoredPrint() => _ColoredPrint = false;
+        
         /// <summary>
         /// Enable print date in logger
         /// </summary>
@@ -25,6 +34,9 @@ namespace SimpleLogger.ConsoleService
         /// Disable print date in logger
         /// </summary>
         public void DisablePrintDate() => _PrintDate = false;
+
+        public enum ColorCode { Default, Info, Warning, Error, Fatal }
+
         /// <summary>
         /// Set console colors
         /// </summary>
@@ -75,6 +87,7 @@ namespace SimpleLogger.ConsoleService
         #endregion
         #region internal access
 
+        internal bool IsColoredPrint => _ColoredPrint;
         internal bool IsPrintDate() => _PrintDate;
         internal ConsoleColor GetColor(ColorCode color) => color switch
         {

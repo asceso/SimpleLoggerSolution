@@ -15,6 +15,14 @@ namespace Demo
             consoleLogger.Error("Test error message");
             consoleLogger.Fatal("Test fatal message");
 
+            consoleLogger.Additional.EnableColoredPrint();
+            Console.WriteLine();
+
+            consoleLogger.Info("Test info message");
+            consoleLogger.Warning("Test warning message");
+            consoleLogger.Error("Test error message");
+            consoleLogger.Fatal("Test fatal message");
+
             consoleLogger.Additional.EnablePrintDate();
             Console.WriteLine();
 

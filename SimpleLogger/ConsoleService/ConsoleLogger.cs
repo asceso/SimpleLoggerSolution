@@ -24,9 +24,20 @@ namespace SimpleLogger.ConsoleService
         }
         private void SetColorAndSendMessage(ConsoleColor color, string message, LogLevel level)
         {
-            Console.ForegroundColor = color;
-            WriteMessageWithLogLevel(message, level);
-            Console.ForegroundColor = Additional.GetColor(AdditionalMethods.ColorCode.Default);
+            if (Additional.IsColoredPrint)
+            {
+                Console.ForegroundColor = color;
+                WriteMessageWithLogLevel(message, level);
+                Console.ForegroundColor = Additional.GetColor(AdditionalMethods.ColorCode.Default);
+            }
+            else
+            {
+                if (Console.ForegroundColor != Additional.GetColor(AdditionalMethods.ColorCode.Default))
+                {
+                    Console.ForegroundColor = Additional.GetColor(AdditionalMethods.ColorCode.Default);
+                }
+                WriteMessageWithLogLevel(message, level);
+            }
         }
 
         #endregion
@@ -36,7 +47,6 @@ namespace SimpleLogger.ConsoleService
         public void Warning(string message) => SetColorAndSendMessage(Additional.GetColor(AdditionalMethods.ColorCode.Warning), message, LogLevel.WARNING);
         public void Error(string message) => SetColorAndSendMessage(Additional.GetColor(AdditionalMethods.ColorCode.Error), message, LogLevel.ERROR);
         public void Fatal(string message) => SetColorAndSendMessage(Additional.GetColor(AdditionalMethods.ColorCode.Fatal), message, LogLevel.FATAL);
-
 
         #endregion
     }
