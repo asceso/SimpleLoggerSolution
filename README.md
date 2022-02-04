@@ -7,6 +7,7 @@
 - [Поддерживаемые платформы](#поддерживаемые-платформы)
 - [Руководство использования](#руководство-использования)
 - [Дополнительные методы](#дополнительные-методы)
+- [Файл логгер](#файл-логгер)
 
 ---
 
@@ -67,4 +68,46 @@ consoleLogger.Additional.SetConsoleLoggerColors(ConsoleColor.Green, ConsoleColor
 
 //Устанавливает определенный цвет по его enum
 consoleLogger.Additional.SetConsoleLoggerColor(AdditionalMethods.ColorCode.Fatal, ConsoleColor.Blue);
+```
+
+## Файл логгер
+Для работы с файл логгером необходимо инициализировать его
+
+```C#
+IFileLogger fileLogger;
+
+void Main()
+{
+  fileLogger = new FileLogger();
+  fileLogger.InitLogsFolder();
+}
+```
+
+По умолчанию директория задается <текущий путь> + /logs/
+При необходимости изменить директорию можно использовать метод
+
+```C#
+fileLogger.SetLogsPath("your_path");
+```
+
+Пример использования
+```C#
+IFileLogger fileLogger;
+
+void Main()
+{
+  fileLogger = new FileLogger();
+  fileLogger.SetLogsPath("your_path");
+  fileLogger.InitLogsFolder();
+}
+```
+
+Далее для использования доступны методы Info, Warning, Error, Fatal</br>
+Пример использования
+
+```C#
+fileLogger.Info("Test info message");
+fileLogger.Warning("Test warning message");
+fileLogger.Error("Test error message");
+fileLogger.Fatal("Test fatal message");
 ```
