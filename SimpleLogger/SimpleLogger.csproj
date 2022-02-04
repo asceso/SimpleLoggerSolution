@@ -11,6 +11,8 @@
     <PackageProjectUrl>https://github.com/asceso/SimpleLoggerSolution</PackageProjectUrl>
     <RepositoryUrl>https://github.com/asceso/SimpleLoggerSolution</RepositoryUrl>
     <RepositoryType>Github</RepositoryType>
+    <Version>1.0.1</Version>
+    <AssemblyVersion>1.0.1.0</AssemblyVersion>
   </PropertyGroup>
 
 </Project>
