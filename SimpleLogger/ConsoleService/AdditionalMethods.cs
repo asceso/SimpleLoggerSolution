@@ -25,7 +25,7 @@ namespace SimpleLogger.ConsoleService
         /// Disable colored print in logger
         /// </summary>
         public void DisableColoredPrint() => _ColoredPrint = false;
-        
+
         /// <summary>
         /// Enable print date in logger
         /// </summary>

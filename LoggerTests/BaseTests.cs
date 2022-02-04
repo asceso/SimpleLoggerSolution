@@ -10,7 +10,7 @@ namespace LoggerTests
     {
         IConsoleLogger logger;
         IFileLogger fileLogger;
-        int bulkTestCount = 10000;
+        readonly int bulkTestCount = 10000;
 
         [SetUp]
         public void Setup()
