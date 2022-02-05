@@ -8,6 +8,7 @@
 - [Руководство использования](#руководство-использования)
 - [Дополнительные методы](#дополнительные-методы)
 - [Файл логгер](#файл-логгер)
+- [Общий сервис](#общий-сервис)
 
 ---
 
@@ -110,4 +111,21 @@ fileLogger.Info("Test info message");
 fileLogger.Warning("Test warning message");
 fileLogger.Error("Test error message");
 fileLogger.Fatal("Test fatal message");
+```
+
+## Общий сервис
+Для удобства использования создан общий сервис, при инициализации можно добавить инициализированные ранее сервисы и пользоваться одним методом для вызова двух сервисов одновременно.
+Пример использования
+
+```C#
+ISimpleLogger logger = new SimpleLogger();
+logger.SetLoggerInterfaces(consoleLogger, fileLogger);
+
+//Для следующих методов будет выполнено два действия
+//Запись в консоль и запись в файл
+
+logger.Info("Test info message");
+logger.Warning("Test warning message");
+logger.Error("Test error message");
+logger.Fatal("Test fatal message");
 ```
