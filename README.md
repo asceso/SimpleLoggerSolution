@@ -118,7 +118,7 @@ fileLogger.Fatal("Test fatal message");
 Пример использования
 
 ```C#
-ISimpleLogger logger = new SimpleLogger();
+IConsoleLogger logger = new CommonLogger();
 logger.SetLoggerInterfaces(consoleLogger, fileLogger);
 
 //Для следующих методов будет выполнено два действия

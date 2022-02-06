@@ -6,13 +6,13 @@
     <Authors>Uchidero Krauch</Authors>
     <Company>Uchidero Krauch</Company>
     <Product>SimpleLoggerService</Product>
-    <Description>Simple console logger</Description>
+    <Description>Simple console and file logger</Description>
     <Copyright>Uchidero Krauch ©</Copyright>
     <PackageProjectUrl>https://github.com/asceso/SimpleLoggerSolution</PackageProjectUrl>
     <RepositoryUrl>https://github.com/asceso/SimpleLoggerSolution</RepositoryUrl>
     <RepositoryType>Github</RepositoryType>
-    <Version>1.0.2</Version>
-    <AssemblyVersion>1.0.2.0</AssemblyVersion>
+    <Version>1.0.3</Version>
+    <AssemblyVersion>1.0.3.0</AssemblyVersion>
   </PropertyGroup>
 
 </Project>

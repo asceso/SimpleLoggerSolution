@@ -3,7 +3,7 @@ using SimpleLogger.FileService;
 
 namespace SimpleLogger.CommonService
 {
-    public class SimpleLogger : ISimpleLogger
+    public class CommonLogger : ICommonLogger
     {
         private IConsoleLogger consoleLogger;
         private IFileLogger fileLogger;

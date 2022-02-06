@@ -3,7 +3,7 @@ using SimpleLogger.FileService;
 
 namespace SimpleLogger.CommonService
 {
-    public interface ISimpleLogger
+    public interface ICommonLogger
     {
         /// <summary>
         /// Method set inited logger interfaces
