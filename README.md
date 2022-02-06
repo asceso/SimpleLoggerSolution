@@ -129,3 +129,13 @@ logger.Warning("Test warning message");
 logger.Error("Test error message");
 logger.Fatal("Test fatal message");
 ```
+
+Так же помимо общего использования доступно использование сервисов по отдельности, выведены свойства для использования сервисов
+Пример использования
+
+```C#
+//Свойство обращается к консоли
+logger.Console.Info("Test info message");
+//Свойство обращается к файлу
+logger.File.Info("Test info message");
+```

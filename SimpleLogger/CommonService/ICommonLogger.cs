@@ -6,6 +6,14 @@ namespace SimpleLogger.CommonService
     public interface ICommonLogger
     {
         /// <summary>
+        /// Property get access to console logger
+        /// </summary>
+        public IConsoleLogger Console { get; }
+        /// <summary>
+        /// Property get access to file logger
+        /// </summary>
+        public IFileLogger File { get; }
+        /// <summary>
         /// Method set inited logger interfaces
         /// </summary>
         /// <param name="consoleLogger">console logger interface</param>

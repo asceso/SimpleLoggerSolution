@@ -8,6 +8,8 @@ namespace SimpleLogger.CommonService
         private IConsoleLogger consoleLogger;
         private IFileLogger fileLogger;
 
+        public IConsoleLogger Console => consoleLogger;
+        public IFileLogger File => fileLogger;
         public void SetLoggerInterfaces(IConsoleLogger consoleLogger, IFileLogger fileLogger)
         {
             this.consoleLogger = consoleLogger;
