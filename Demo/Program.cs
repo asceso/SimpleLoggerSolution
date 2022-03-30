@@ -3,10 +3,11 @@ using System;
 
 namespace Demo
 {
-    class Program
+    internal class Program
     {
-        static IConsoleLogger consoleLogger;
-        static void Main()
+        private static IConsoleLogger consoleLogger;
+
+        private static void Main()
         {
             consoleLogger = new ConsoleLogger();
 

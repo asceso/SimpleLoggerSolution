@@ -14,13 +14,15 @@ namespace SimpleLogger.ConsoleService
         private bool _PrintDate = false;
         private bool _ColoredPrint = false;
 
-        #endregion
+        #endregion private fields
+
         #region public methods
 
         /// <summary>
         /// Enable colored print in logger
         /// </summary>
         public void EnableColoredPrint() => _ColoredPrint = true;
+
         /// <summary>
         /// Disable colored print in logger
         /// </summary>
@@ -30,12 +32,14 @@ namespace SimpleLogger.ConsoleService
         /// Enable print date in logger
         /// </summary>
         public void EnablePrintDate() => _PrintDate = true;
+
         /// <summary>
         /// Disable print date in logger
         /// </summary>
         public void DisablePrintDate() => _PrintDate = false;
 
-        public enum ColorCode { Info, Warning, Error, Fatal }
+        public enum ColorCode
+        { Info, Warning, Error, Fatal }
 
         /// <summary>
         /// Set console colors
@@ -54,6 +58,7 @@ namespace SimpleLogger.ConsoleService
             _ErrorColor = errorColor;
             _FatalColor = fatalCollor;
         }
+
         /// <summary>
         /// Set single color
         /// </summary>
@@ -71,7 +76,8 @@ namespace SimpleLogger.ConsoleService
             }
         }
 
-        #endregion
+        #endregion public methods
+
         #region ctor
 
         public AdditionalMethods()
@@ -84,12 +90,16 @@ namespace SimpleLogger.ConsoleService
             _FatalColor = ConsoleColor.DarkRed;
         }
 
-        #endregion
+        #endregion ctor
+
         #region internal access
 
         internal bool IsColoredPrint => _ColoredPrint;
+
         internal bool IsPrintDate() => _PrintDate;
+
         internal ConsoleColor GetDefaultConsoleColor() => ConsoleColor.Gray;
+
         internal ConsoleColor GetColor(ColorCode color) => color switch
         {
             ColorCode.Info => _InfoColor,
@@ -99,6 +109,6 @@ namespace SimpleLogger.ConsoleService
             _ => _DefaultColor,
         };
 
-        #endregion
+        #endregion internal access
     }
 }

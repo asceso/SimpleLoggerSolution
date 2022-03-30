@@ -6,11 +6,11 @@ using System.Collections.Generic;
 
 namespace LoggerTests
 {
-    public class Tests
+    public class TestsNetCore
     {
-        IConsoleLogger logger;
-        IFileLogger fileLogger;
-        readonly int bulkTestCount = 10000;
+        private IConsoleLogger logger;
+        private IFileLogger fileLogger;
+        private readonly int bulkTestCount = 10000;
 
         [SetUp]
         public void Setup()

@@ -14,6 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\SimpleLoggerDotNet\SimpleLoggerDotNet.csproj" />
     <ProjectReference Include="..\SimpleLogger\SimpleLogger.csproj" />
   </ItemGroup>
 

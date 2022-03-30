@@ -7,17 +7,21 @@ namespace SimpleLogger.FileService
     {
         #region private fields
 
-        private enum LogLevel { INFO, WARNING, ERROR, FATAL }
+        private enum LogLevel
+        { INFO, WARNING, ERROR, FATAL }
+
         private static string _LogsFolderPath;
         private static bool _InitComplete;
         private readonly string _TimeFormat = "HH:mm:ss";
 
-        #endregion
+        #endregion private fields
+
         #region init
 
         public FileLogger() => _LogsFolderPath = Environment.CurrentDirectory + "/logs/";
 
-        #endregion
+        #endregion init
+
         #region private methods
 
         private void CheckInitFolder()
@@ -27,8 +31,11 @@ namespace SimpleLogger.FileService
                 throw new ArgumentException("Init logs folder before use public methods");
             }
         }
+
         private string GenerateLogFilename() => $"{DateTime.Now:ddMMyyyy}.log";
+
         private string GenerateMessageWithLogLevel(string message, LogLevel level) => $"{DateTime.Now.ToString(_TimeFormat)}|{level}|{message}";
+
         private void CreateOrAppendLogFile(string message, LogLevel level)
         {
             CheckInitFolder();
@@ -47,10 +54,12 @@ namespace SimpleLogger.FileService
             }
         }
 
-        #endregion
+        #endregion private methods
+
         #region public methods
 
         public void SetLogsPath(string path) => _LogsFolderPath = path;
+
         public void InitLogsFolder()
         {
             if (!Directory.Exists(_LogsFolderPath))
@@ -63,11 +72,15 @@ namespace SimpleLogger.FileService
                 _InitComplete = true;
             }
         }
+
         public void Info(string message) => CreateOrAppendLogFile(message, LogLevel.INFO);
+
         public void Warning(string message) => CreateOrAppendLogFile(message, LogLevel.WARNING);
+
         public void Error(string message) => CreateOrAppendLogFile(message, LogLevel.ERROR);
+
         public void Fatal(string message) => CreateOrAppendLogFile(message, LogLevel.FATAL);
 
-        #endregion
+        #endregion public methods
     }
 }
